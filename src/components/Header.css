@@ -1,0 +1,31 @@
+header {
+    width: 1440px;
+    height: 80px;
+    display: flex;
+    padding-left: 280px;
+    padding-right: 280px;
+    background-color: #FBDABB;    
+}
+
+.logo-container {
+    width: 25%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;    
+}
+
+.navigation-menu {
+    width: 75%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;    
+}
+
+.navigation-menu ul {
+    display: flex;
+    width: 100%;
+    list-style-type: none;
+    justify-content: space-evenly;
+}
