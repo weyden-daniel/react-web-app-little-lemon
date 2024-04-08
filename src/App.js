@@ -1,23 +1,28 @@
+import Header from './components/Header';
+import Home from './components/Home';
+import About from './components/About';
+import Menu from './components/Menu';
+import Reservations from './components/Reservations';
+//import Footer from './components/Footer';
 
 import './App.css';
 
-import Header from './components/Header';
-//import Nav from './components/Nav';
-//import Main from './components/Main';
-//import Footer from './components/Footer';
-
 function App() {
   return (
-    <>
+    <div class="web-page-container">
         <Header/>
+        <main>
+            <Home/>
+            <About/>
+            <Menu/>
+            <Reservations/>
+        </main>
         {
         /*
-        <Nav/>
-        <Main/>
-        <Footer/>
+            <Footer/>
         */
         }
-    </>
+    </div>
   );
 }
 
