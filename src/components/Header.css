@@ -1,38 +1,105 @@
 header {
-    width: 1440px;
-    height: 80px;
-}
-
-.header-container {
     display: flex;
-    height: 100%;
-    padding-left: 280px;
-    padding-right: 280px;
+    width: 100vw;
+    max-width: 1440px;
+    background-color: #EDEFEE;
+    position: fixed;
+    top: 0;
+    transition-property: "transform";
+    transition-duration: "0.3s";
+    transition-timing-function: "ease-in-out";
 }
 
-.logo-container {
-    width: 25%;
-    height: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.navigation-menu {
-    width: 75%;
-    height: 100%;
+.navigation-menu {    
+    height: 100%;    
     display: flex;
     align-items: center;
 }
 
 .navigation-menu ul {
-    display: flex;
     width: 100%;
+    display: flex;
     list-style-type: none;
     justify-content: space-evenly;
     padding-inline-start: 0;
 }
 
-.navigation-menu li {
-    display: box;
+.navigation-menu a {
+    text-decoration: none;
+    color: #333333;
+}
+
+.navigation-menu a:hover {
+    background-color: #495E57;
+    color: #EDEFEE;
+}
+
+@media only screen and (min-width: 768px) {
+
+    header {
+        height: 80px;
+    }
+
+    .empty-on-mobile {
+        display: flex;
+    }
+
+    .short-logo-container {
+        display: none;
+    }
+
+    .default-logo-container {
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .navigation-menu a {
+        padding: 10px 5px 10px 5px;
+        font-size: 1rem;
+    }
+}
+
+@media only screen and (max-width: 767px) {
+
+    header {
+        height: 60px;
+    }
+
+    .empty-on-mobile {
+        display: flex;
+    }
+
+    .short-logo-container {
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .default-logo-container {
+        display: none;
+    }
+
+    .navigation-menu a {
+        padding: 10px 5px 10px 5px;
+        font-size: 0.8rem;
+    }
+}
+
+@media only screen and (max-width: 599px) {
+
+    header {
+        height: 40px;
+    }
+
+    .empty-on-mobile {
+        display: none;
+    }
+
+    .navigation-menu a {
+        padding: 5px;
+        font-size: 0.6rem;
+    }
 }

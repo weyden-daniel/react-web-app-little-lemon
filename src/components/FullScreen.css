@@ -1,4 +1,5 @@
-.full-screen {
-    width: 1440px;
+.full-screen {    
+    width: 100vw;
+    max-width: 1440px;
     height: 100vh;
 }
