@@ -4,7 +4,7 @@ import { Routes, Route, useNavigate } from "react-router-dom";
 import Home from './Home';
 import About from './About';
 import Menu from './Menu';
-import Reservations from './Reservations';
+import BookingForm from './BookingForm';
 import ConfirmedBooking from "./ConfirmedBooking";
 
 import { fetchAPI, submitAPI } from '../utils/fakeAPI';
@@ -60,8 +60,8 @@ export default function Main () {
                 ></Route>
 
                 <Route
-                    path="/reservations"
-                    element={<Reservations
+                    path="/booking-form"
+                    element={<BookingForm
                         availableTimesState = { availableTimesState }
                         availableTimesDispatch = { availableTimesDispatch }
                         handleSubmitForm = { handleSubmitForm }

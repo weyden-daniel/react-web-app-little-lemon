@@ -1,3 +1,9 @@
+.booking-screen{
+    background-color: #FBDABB;
+    height: 100%;
+    width: 100%;
+}
+
 .booking-form {
     display: grid;
     gap: 20px;
