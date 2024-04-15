@@ -1,0 +1,9 @@
+.booking-form {
+    display: grid;
+    gap: 20px;
+    width: 250px;
+    max-width: 100%;
+    padding: 20px;
+    margin: 20px;
+    background-color: #EDEFEE;
+}

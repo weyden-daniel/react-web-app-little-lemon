@@ -1,61 +1,34 @@
-import {
-	BrowserRouter as Router,
-	Routes,
-	Route
-} from "react-router-dom";
+import { BrowserRouter as Router } from "react-router-dom";
 
 import Header from './components/Header';
-import Home from './components/Home';
-import About from './components/About';
-import Menu from './components/Menu';
-import Reservations from './components/Reservations';
+import Main from './pages/Main';
+
 //import Footer from './components/Footer';
 
 import './App.css';
 
-function App() {
-  return (
-    <div class="web-page-container">
+export default function App() {
 
-        <Router>
+    return (
+        <div class="web-page-container">
 
-            <header>
-                <Header/>
-            </header>
+            <Router>
 
-            <main class="main-screen">
-                <Routes>
+                <header>
+                    <Header/>
+                </header>
 
-                    <Route
-                        path="/"
-                        element={<Home/>}
-                    ></Route>
+                <main class="main-screen">
 
-                    <Route
-                        path="/about"
-                        element={<About/>}
-                    ></Route>
+                    <Main/>
 
-                    <Route
-                        path="/menu"
-                        element={<Menu/>}
-                    ></Route>
+                </main>
 
-                    <Route
-                        path="/reservations"
-                        element={<Reservations/>}
-                    ></Route>
+                <footer>
+                    {/*<Footer/>*/}
+                </footer>
 
-                </Routes>
-            </main>
-
-            <footer>
-                {/*<Footer/>*/}
-            </footer>
-
-        </Router>
-    </div>
-  );
-}
-
-export default App;
+            </Router>
+        </div>
+    );
+};
