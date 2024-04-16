@@ -1,88 +1,140 @@
-import { useState } from 'react';
+import { useEffect, useRef } from 'react';
 
-import { todayFormattedDate } from '../utils/todayFormattedDate';
+import { Formik, Form, Field, ErrorMessage } from 'formik';
+import * as Yup from 'yup';
+
+import DatePicker from 'react-datepicker';
+import 'react-datepicker/dist/react-datepicker.css';
+
+import { threeMonthsFromNowDate } from '../utils/threeMonthsFromNowDate';
 
 import './BookingForm.css';
 
 export default function BookingForm({ availableTimesState, availableTimesDispatch, handleSubmitForm }) {
 
-    const [ resDate, setResDate ] = useState(todayFormattedDate);
-    const [ resTime, setResTime ] = useState();
-    const [ resNumGuests, setResNumGuests ] = useState();
-    const [ resOccasion, setResOccasion ] = useState();
+    const selectReservationTimeRef = useRef(null);
 
-    const handleSubmit = ( e ) => {
+    useEffect(() => {
 
-        e.preventDefault();
+        if (availableTimesState.length > 0) {
 
-        handleSubmitForm({
-            date: resDate,
-            time: resTime,
-            numGuests: resNumGuests,
-            occasion: resOccasion
-        });
+            selectReservationTimeRef.current.value = availableTimesState[0].hour
+        }
 
-    }
+    }, [availableTimesState]);
 
     return (
 
-        <div class="booking-screen">
+        <div className="booking-screen">
 
-            <h1>Reservations</h1>
+            <div className="page-title">Reservations</div>
 
-            <form onSubmit={handleSubmit} class="booking-form" aria-label="Form to make a table reservation">
+            <Formik
+                initialValues={{
+                    reservationDate: new Date(),
+                    reservationTime: (availableTimesState.length > 0) ? availableTimesState[0].hour : '',
+                    resNumGuests: 2,
+                    resOccasion: 'Birthday'
+                }}
+                validationSchema={Yup.object({
+                    reservationDate: Yup.date().required('Required'),
+                    reservationTime: Yup.string().required('Required'),
+                    resNumGuests: Yup.number()
+                        .min(1, 'Min: 1')
+                        .max(10, 'Max: 10')
+                        .required('Required'),
+                    resOccasion: Yup.string().required('Required'),
+                })}
+                onSubmit={(values, { setSubmitting }) => {
+                    handleSubmitForm(values);
+                    setSubmitting(false);
+                }}
+            >
+                {({ values, setFieldValue, isValid }) => {
 
-                <h3>Please provide the following details to reserve your table.</h3>
+                    return (
 
-                <label htmlFor="reservation-date">
-                    Choose date</label>
-                <input
-                    type="date"
-                    id="reservation-date"
-                    value={resDate}
-                    onChange={ ( e ) => {
-                        setResDate(e.target.value);
-                        availableTimesDispatch({ type: e.target.value });
-                    }}
-                />
+                        <Form className="booking-form" aria-label="Form to make a table reservation">
 
-                <label htmlFor="reservation-time">Choose time</label>
-                <select
-                    id="reservation-time"
-                    value={resTime}
-                    onChange={ e => setResTime(e.target.value) }
-                >
-                    {availableTimesState.map((time) => {
-                        return <option key={time.hour}>{time.hour}</option>
-                    })}
-                </select>
+                            <div className="form-title">Please provide the following details to reserve your table.</div>
 
-                <label htmlFor="rest-num-guests">Number of guests</label>
-                <input
-                    type="number"
-                    placeholder="1"
-                    min="1"
-                    max="10"
-                    id="rest-num-guests"
-                    value={resNumGuests}
-                    onChange={ e => setResNumGuests(e.target.value) }
-                />
+                            <div className="fieldset">
+                                <label htmlFor="reservationDate">Choose date</label>
+                                <Field name="reservationDate">
+                                    {({ field }) => (
+                                        <DatePicker
+                                            className="form-field"
+                                            {...field}
+                                            selected = {values.reservationDate}
+                                            minDate={new Date()} // Set minimum date to today's date
+                                            maxDate={threeMonthsFromNowDate} // Set maximum date to three month from today
+                                            onChange={(date) => {
+                                                setFieldValue('reservationDate', date);
+                                                availableTimesDispatch({ type: date });
+                                            }}
+                                        />
+                                    )}
+                                </Field>
+                                <ErrorMessage name="reservationDate" component="div" className="form-field-error"/>
+                            </div>
 
-                <label htmlFor="res-occasion">Occasion</label>
-                <select
-                    id="res-occasion"
-                    value={resOccasion}
-                    onChange={ e => setResOccasion(e.target.value) }
-                >
-                    <option>Birthday</option>
-                    <option>Anniversary</option>
-                </select>
+                            <div className="fieldset">
+                                <label htmlFor="reservationTime">Choose time</label>
 
-                <button type="submit">Submit</button>
+                                <Field
+                                    className="form-field"
+                                    name="reservationTime"
+                                    as="select"
+                                    innerRef={selectReservationTimeRef}
+                                >
+                                    {availableTimesState.map((time) => {
+                                        return <option key={time.hour}>{time.hour}</option>
+                                    })}
+                                </Field>
 
-            </form>
+                                <ErrorMessage name="reservationTime" component="div" className="form-field-error"/>
+                            </div>
+
+                            <div className="fieldset">
+                                <label htmlFor="resNumGuests">Number of guests</label>
+                                <Field
+                                    className="form-field"
+                                    name="resNumGuests"
+                                    type="number"
+                                    min="1"
+                                    max="10"
+                                />
+                                <ErrorMessage name="resNumGuests" component="div" className="form-field-error"/>
+                            </div>
+
+                            <div className="fieldset">
+                                <label htmlFor="resOccasion">Occasion</label>
+                                <Field
+                                    className="form-field"
+                                    name="resOccasion"
+                                    as="select"
+                                >
+                                    <option>Birthday</option>
+                                    <option>Anniversary</option>
+                                </Field>
+                                <ErrorMessage name="resOccasion" component="div" className="form-field-error"/>
+                            </div>
+
+                            <button
+                                type="submit"
+                                className={"form-field " + (isValid ? "form-field-button-valid" : "form-field-button-invalid" )}
+                            >
+                                Submit
+                            </button>
+
+                        </Form>
+
+                    );
+
+                }}
+
+            </Formik>
 
         </div>
-
     );
 }

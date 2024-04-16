@@ -8,17 +8,17 @@ import logo_short from '../img/Logo_short.png';
 export default function Header() {
 
     return (
-        <div class="header-body">
+        <div className="header-body">
 
-            <div class="short-logo">
+            <div className="short-logo">
                 <img src={logo_short} alt="Little Lemon logo" height="70%"/>
             </div>
 
-            <div class="default-logo">
+            <div className="default-logo">
                 <img src={logo} alt="Little Lemon logo" width="80%" />
             </div>
 
-            <nav class="navigation-bar">
+            <nav className="navigation-bar">
                 <ul>
                     <li><Link to="/">Home</Link></li>
                     <li><Link to="/about">About</Link></li>

@@ -10,7 +10,7 @@ import './App.css';
 export default function App() {
 
     return (
-        <div class="web-page-container">
+        <div className="web-page-container">
 
             <Router>
 
@@ -18,7 +18,7 @@ export default function App() {
                     <Header/>
                 </header>
 
-                <main class="main-screen">
+                <main className="main-screen">
 
                     <Main/>
 

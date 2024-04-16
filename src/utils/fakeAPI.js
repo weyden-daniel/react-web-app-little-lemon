@@ -6,14 +6,15 @@ const seededRandom = seed => {
     return () => (s = s * a % m) / m;
   };
 
-  const fetchAPI = ( stringFormattedDate ) => {
+  const fetchAPI = ( date ) => {
 
-    // YYYY-MM-DD
-    const dateParts = stringFormattedDate.split("-");
+    if ( !( date instanceof Date) ) {
+        return [];
+    }
 
-    const year = parseInt(dateParts[0]);
-    const month = parseInt(dateParts[1]);
-    const day = parseInt(dateParts[2]);
+    const year = parseInt(date.getFullYear());
+    const month = parseInt(('0' + (date.getMonth() + 1)).slice(-2));
+    const day = parseInt(('0' + date.getDate()).slice(-2));
 
     const numericalDate = year * 10000 + month * 100 + day;
 
@@ -30,7 +31,7 @@ const seededRandom = seed => {
 
 const submitAPI = ( formData ) => {
 
-    console.log(formData);
+    console.log("Submitted form data: ", formData);
 
     return true;
 }

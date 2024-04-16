@@ -8,14 +8,13 @@ import BookingForm from './BookingForm';
 import ConfirmedBooking from "./ConfirmedBooking";
 
 import { fetchAPI, submitAPI } from '../utils/fakeAPI';
-import { todayFormattedDate } from "../utils/todayFormattedDate";
 
-export function initializeTimes( stringFormattedDate ) {
+export function initializeTimes( today ) {
 
-    return fetchAPI(stringFormattedDate);
+    return fetchAPI(today);
 }
 
-export const todayAvailableTimes = initializeTimes(todayFormattedDate);
+export const todayAvailableTimes = initializeTimes(new Date());
 
 export function updateTimesReducer(state, action) {
 
