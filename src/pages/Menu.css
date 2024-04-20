@@ -1,5 +1,7 @@
 .menu-screen{
-    background-color: #EE9972;
-    height: 100%;
+    flex-grow: 1;
     width: 100%;
+    min-height: 100%;
+    background-color: #EE9972;
+    padding: 20px;
 }

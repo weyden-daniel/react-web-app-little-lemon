@@ -5,16 +5,17 @@
     width: 100vw;
     max-width: 1440px;
     background-color: #EDEFEE;
-    height: 60px;
+    height: 80px;
 }
 
 .short-logo {
     grid-column: 1 / span 2;
     display: flex;
-    justify-content: center;
     align-items: center;
+    justify-content: center;
     max-width: 100%;
-    max-height: 40px;
+    max-height: 60px;
+    padding-left: 10px;
 }
 
 .short-logo img {
@@ -24,18 +25,20 @@
 .default-logo {
     height: 100%;
     display: grid;
-    place-items: center;
+    align-items: center;
+    padding-left: 10px;
 }
 
 .navigation-bar {
     display: flex;
     align-items: center;
+    padding-right: 10px;
 }
 
 @media only screen and (max-width: 699px){
 
     .header-body {
-        height: 40px;
+        height: 60px;
     }
 
     .default-logo {
@@ -60,15 +63,15 @@
     }
 
     .default-logo {
-        grid-column: 1 / span 2;
+        grid-column: 2 / span 2;
     }
 
     .navigation-bar {
-        grid-column: 3 / span 10;
+        grid-column: 4 / span 8;
     }
 
     .navigation-bar a {
-        padding: 10px 15px 10px 15px;
+        padding: 10px 5px 10px 5px;
         font-size: 0.8rem;
     }
 }
@@ -119,7 +122,7 @@
     width: 100%;
     display: flex;
     list-style-type: none;
-    justify-content: space-evenly;
+    justify-content: space-between;
     padding-inline-start: 0;
 }
 
@@ -131,6 +134,11 @@
 }
 
 .navigation-bar a:hover {
+    background-color: #495E57;
+    color: #EDEFEE;
+}
+
+.navigation-bar a.selected-option {
     background-color: #495E57;
     color: #EDEFEE;
 }

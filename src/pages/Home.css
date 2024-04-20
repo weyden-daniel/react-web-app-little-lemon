@@ -1,5 +1,297 @@
-.home-screen{
-    background-color: #495E57;
-    height: 100%;
+.home-screen {
+    flex-grow: 1;
     width: 100%;
+    min-height: 100%;
+    background-color: #EDEFEE;
+}
+
+.hero-banner {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-rows: repeat(14, 1fr);
+}
+
+.green-rectangle {
+    background-color: #495E57;
+    grid-column: 1 / span 12;
+    grid-row: 1 / span 11;
+    z-index: 1;
+}
+
+.banner-text-container {
+    grid-row: 2 / span 10;
+    z-index: 2;
+    padding-left: 10px;
+}
+
+.banner-text-container h1 {
+    color: #CCA410;
+    font-family: "Markazi Text", serif;
+    padding: 0;
+    margin: 0;
+    font-weight: 700;
+}
+
+.banner-text-container h2 {
+    color: #EDEFEE;
+    font-family: "Markazi Text", serif;
+    padding: 0;
+    margin: 0;
+    font-weight: 100;
+}
+
+.banner-text-container p {
+    color: #EDEFEE;
+    font-family: "Markazi Text", serif;
+    margin: 0;
+    font-weight: 100;
+}
+
+.banner-text-container a {
+    display: inline-block;
+    background-color: #F4CE14;
+    color: #333333;
+    text-decoration: none;
+    font-family: "Markazi Text", serif;
+    border-radius: 10px;
+    border-width: 0;
+    margin-top: 5px;
+    font-weight: 600;
+}
+
+.banner-text-container a:hover {
+    background-color: #FBDABB;
+    color: #EDEFEE;
+}
+
+.banner-text-container a:visited {
+    color: #333333;
+}
+
+.banner-image-container {
+    z-index: 2;
+    padding-right: 10px;
+    overflow: hidden;
+    align-items: center;
+    justify-content: center;
+    border-radius: 12px;
+}
+
+.banner-image {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+
+@media only screen and (max-width: 499px) {
+
+    .hero-banner {
+        height: 25vh;
+    }
+
+    .banner-text-container {
+        grid-column: 2 / span 10;
+    }
+
+    .banner-image-container {
+        display: none;
+    }
+
+    .banner-text-container h1 {
+        line-height: 1.2rem;
+        font-size: 2.2rem;
+    }
+
+    .banner-text-container h2 {
+        line-height: 1rem;
+        font-size: 1.2rem;
+    }
+
+    .banner-text-container p {
+        line-height: 1rem;
+        font-size: 0.8rem;
+        padding-top: 10px;
+        padding-right: 0px;
+    }
+
+    .banner-text-container a {
+        line-height: 1.6rem;
+        font-size: 1.2rem;
+        padding: 5px 15px 5px 15px;
+    }
+}
+
+
+@media only screen and (min-width: 500px) {
+
+    .hero-banner {
+        height: 30vh;
+    }
+
+    .banner-text-container {
+        grid-column: 2 / span 10;
+    }
+
+    .banner-image-container {
+        display: none;
+    }
+
+    .banner-text-container h1 {
+        line-height: 2rem;
+        font-size: 3rem;
+    }
+
+    .banner-text-container h2 {
+        line-height: 0.8rem;
+        font-size: 1.6rem;
+    }
+
+    .banner-text-container p {
+        line-height: 1.4rem;
+        font-size: 1.2rem;
+        padding-top: 20px;
+        padding-right: 0px;
+    }
+
+    .banner-text-container a {
+        line-height: 1.8rem;
+        font-size: 1.4rem;
+        padding: 5px 15px 5px 15px;
+    }
+}
+
+@media only screen and (min-width: 700px) {
+
+    .hero-banner {
+        height: 46vh;
+    }
+
+    .banner-text-container {
+        grid-column: 2 / span 5;
+    }
+
+    .banner-image-container {
+        display: flex;
+        grid-column: 7 / span 5;
+        grid-row: 2 / span 14;
+    }
+
+    .banner-text-container h1 {
+        line-height: 2.4rem;
+        font-size: 3.4rem;
+    }
+
+    .banner-text-container h2 {
+        line-height: 1rem;
+        font-size: 1.8rem;
+    }
+
+    .banner-text-container p {
+        line-height: 1.6rem;
+        font-size: 1.4rem;
+        padding-top: 20px;
+        padding-right: 50px;
+    }
+
+    .banner-text-container a {
+        line-height: 2rem;
+        font-size: 1.6rem;
+        padding: 5px 20px 5px 20px;
+    }
+}
+
+@media only screen and (min-width: 900px) {
+
+    .banner-text-container {
+        grid-column: 2 / span 4;
+    }
+
+    .banner-image-container {
+        display: flex;
+        grid-column: 8 / span 4;
+        grid-row: 2 / span 14;
+    }
+
+}
+
+@media only screen and (min-width: 1100px) {
+
+    .hero-banner {
+        height: 46vh;
+    }
+
+    .banner-text-container {
+        grid-column: 3 / span 3;
+    }
+
+    .banner-image-container {
+        display: flex;
+        grid-column: 8 / span 3;
+        grid-row: 2 / span 14;
+    }
+
+    .banner-text-container h1 {
+        line-height: 2.6rem;
+        font-size: 3.6rem;
+    }
+
+    .banner-text-container h2 {
+        line-height: 1.2rem;
+        font-size: 2rem;
+    }
+
+    .banner-text-container p {
+        line-height: 1.6rem;
+        font-size: 1.4rem;
+        padding-top: 20px;
+        padding-right: 60px;
+    }
+
+    .banner-text-container a {
+        line-height: 2rem;
+        font-size: 1.6rem;
+        padding: 5px 25px 5px 25px;
+    }
+}
+
+@media only screen and (min-width: 1440px) {
+
+    .hero-banner {
+        height: 46vh;
+    }
+
+    .banner-text-container {
+        grid-column: 3 / span 3;
+    }
+
+    .banner-image-container {
+        display: flex;
+        grid-column: 8 / span 3;
+        grid-row: 2 / span 14;
+    }
+
+    .banner-text-container h1 {
+        line-height: 2.8rem;
+        font-size: 3.8rem;
+    }
+
+    .banner-text-container h2 {
+        line-height: 1.4rem;
+        font-size: 2.2rem;
+    }
+
+    .banner-text-container p {
+        line-height: 1.8rem;
+        font-size: 1.6rem;
+        padding-top: 20px;
+        padding-right: 70px;
+    }
+
+    .banner-text-container a {
+        line-height: 2.2rem;
+        font-size: 1.8rem;
+        padding: 5px 25px 5px 25px;
+    }
+
 }
