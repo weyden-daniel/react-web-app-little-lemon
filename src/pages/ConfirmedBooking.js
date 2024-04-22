@@ -1,5 +1,13 @@
+import './ConfirmedBooking.css';
+
 export default function ConfirmedBooking() {
-    return (
-        <h1>Confirmed Booking</h1>
+    return(
+        <div className="confirmed-booking-screen">
+
+            <div className="confirmed-booking-page-title">
+                <h1>Congratulations! Your Booking is confirmed.</h1>
+            </div>
+
+        </div>
     );
 }
