@@ -3,11 +3,11 @@ import Dish from '../components/Dish';
 
 import './Menu.css';
 
-import dish_pasta from '../img/Pasta.png';
-import dish_grilled_fish from '../img/Grilled fish.png';
-import dish_bruschetta from '../img/Bruschetta.png';
-import dish_greek_salad from '../img/Greek salad.png';
-import dish_lemon_dessert from '../img/Lemon dessert.png';
+import dish_pasta from '../img/dishes/Pasta.png';
+import dish_grilled_fish from '../img/dishes/Grilled fish.png';
+import dish_bruschetta from '../img/dishes/Bruschetta.png';
+import dish_greek_salad from '../img/dishes/Greek salad.png';
+import dish_lemon_dessert from '../img/dishes/Lemon dessert.png';
 
 export default function Menu() {
     return(

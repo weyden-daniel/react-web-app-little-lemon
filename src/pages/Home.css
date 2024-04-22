@@ -3,6 +3,7 @@
     width: 100%;
     min-height: 100%;
     background-color: #EDEFEE;
+    padding-bottom: 50px;
 }
 
 .hero-banner {
@@ -84,6 +85,71 @@
     object-fit: cover;
 }
 
+.home-screen-specials,
+.home-screen-testimonials {
+    padding: 50px 20px 0 20px;
+}
+
+.home-screen-specials .specials-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.home-screen-testimonials .testimonials-header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.home-screen-specials .specials-header a {
+    display: inline-block;
+    background-color: #F4CE14;
+    color: #333333;
+    text-decoration: none;
+    font-family: "Markazi Text", serif;
+    border-radius: 10px;
+    border-width: 0;
+    margin-top: 5px;
+    font-weight: 600;
+}
+
+.home-screen-specials .specials-header a:hover {
+    background-color: #FBDABB;
+    color: #EDEFEE;
+}
+
+.home-screen-specials .specials-header a:visited {
+    color: #333333;
+}
+
+
+.home-grid-row {
+    display: grid;
+    grid-template-rows: auto;
+    grid-template-columns: repeat(12, 1fr);
+}
+
+
+.testimonials {
+    grid-row: 1;
+    padding-top: 20px;
+    display: grid;
+    grid-template-rows: auto;
+    grid-template-columns: repeat(12, 1fr);
+    column-gap: 20px;
+}
+
+.testimonial {
+    width: 100%;
+    height: 250px;
+    padding: 15px;
+    background-color: white;
+    border-radius: 20px;
+}
+
+
+
 @media only screen and (max-width: 499px) {
 
     .hero-banner {
@@ -115,13 +181,71 @@
         padding-right: 0px;
     }
 
-    .banner-text-container a {
+    .banner-text-container a,
+    .home-screen-specials .specials-header a {
         line-height: 1.6rem;
         font-size: 1.2rem;
         padding: 5px 15px 5px 15px;
     }
+
+    .home-screen .specials-header,
+    .home-screen .testimonials-header {
+        grid-column: 1 / span 12;
+    }
+
+    .home-screen .specials-header h1,
+    .home-screen .testimonials-header h1 {
+        font-size: 1.2rem;
+    }
+
+    .home-screen .menu-item.two,
+    .home-screen .menu-item.three {
+        display: none;
+    }
+
+    .testimonials {
+        grid-column: 1 / span 12;
+        row-gap: 30px;
+    }
+
+    .testimonial.one {
+        grid-row: 1;
+        grid-column: 1 / span 6;
+    }
+
+    .testimonial.two {
+        grid-row: 1;
+        grid-column: 7 / span 6;
+    }
+
+    .testimonial.three,
+    .testimonial.four {
+        display: none;
+    }
+
 }
 
+@media only screen and (min-width: 500px) and (max-width: 599px) {
+
+    .testimonial.three {
+        display: none;
+    }
+}
+
+@media only screen and (min-width: 500px) and (max-width: 899px) {
+
+    .testimonial.four {
+        display: none;
+    }
+}
+
+@media only screen and (min-width: 500px) and (max-width: 1099px) {
+
+    .home-screen .menu-item.three {
+        display: none;
+    }
+
+}
 
 @media only screen and (min-width: 500px) {
 
@@ -154,10 +278,60 @@
         padding-right: 0px;
     }
 
-    .banner-text-container a {
+    .banner-text-container a,
+    .home-screen-specials .specials-header a {
         line-height: 1.8rem;
         font-size: 1.4rem;
         padding: 5px 15px 5px 15px;
+    }
+
+    .home-screen .specials-header,
+    .home-screen .testimonials-header {
+        grid-column: 1 / span 12;
+    }
+
+    .home-screen .specials-header h1,
+    .home-screen .testimonials-header h1 {
+        font-size: 2rem;
+    }
+
+    .testimonials {
+        grid-column: 1 / span 12;
+        column-gap: 30px;
+    }
+
+    .testimonial.one {
+        grid-row: 1;
+        grid-column: 2 / span 5;
+    }
+
+    .testimonial.two {
+        grid-row: 1;
+        grid-column: 7 / span 5;
+    }
+
+}
+
+@media only screen and (min-width: 600px) {
+
+    .testimonials {
+        grid-column: 1 / span 12;
+        column-gap: 30px;
+    }
+
+    .testimonial.one {
+        grid-row: 1;
+        grid-column: 1 / span 4;
+    }
+
+    .testimonial.two {
+        grid-row: 1;
+        grid-column: 5 / span 4;
+    }
+
+    .testimonial.three {
+        grid-row: 1;
+        grid-column: 9 / span 4;
     }
 }
 
@@ -194,11 +368,28 @@
         padding-right: 50px;
     }
 
-    .banner-text-container a {
+    .banner-text-container a,
+    .home-screen-specials .specials-header a {
         line-height: 2rem;
         font-size: 1.6rem;
         padding: 5px 20px 5px 20px;
     }
+
+    .home-screen .specials-header,
+    .home-screen .testimonials-header {
+        grid-column: 2 / span 10;
+    }
+
+    .home-screen .specials-header h1,
+    .home-screen .testimonials-header h1 {
+        font-size: 2.4rem;
+    }
+
+    .testimonials {
+        grid-column: 2 / span 10;
+        column-gap: 40px;
+    }
+
 }
 
 @media only screen and (min-width: 900px) {
@@ -211,6 +402,26 @@
         display: flex;
         grid-column: 8 / span 4;
         grid-row: 2 / span 14;
+    }
+
+    .testimonial.one {
+        grid-row: 1;
+        grid-column: 1 / span 3;
+    }
+
+    .testimonial.two {
+        grid-row: 1;
+        grid-column: 4 / span 3;
+    }
+
+    .testimonial.three {
+        grid-row: 1;
+        grid-column: 7 / span 3;
+    }
+
+    .testimonial.four {
+        grid-row: 1;
+        grid-column: 10 / span 3;
     }
 
 }
@@ -248,11 +459,28 @@
         padding-right: 60px;
     }
 
-    .banner-text-container a {
+    .banner-text-container a,
+    .home-screen-specials .specials-header a {
         line-height: 2rem;
         font-size: 1.6rem;
         padding: 5px 25px 5px 25px;
     }
+
+    .home-screen .specials-header,
+    .home-screen .testimonials-header {
+        grid-column: 3 / span 8;
+    }
+
+    .home-screen .specials-header h1,
+    .home-screen .testimonials-header h1 {
+        font-size: 2.8rem;
+    }
+
+    .testimonials {
+        grid-column: 3 / span 8;
+        column-gap: 30px;
+    }
+
 }
 
 @media only screen and (min-width: 1440px) {
@@ -288,7 +516,8 @@
         padding-right: 70px;
     }
 
-    .banner-text-container a {
+    .banner-text-container a,
+    .home-screen-specials .specials-header a {
         line-height: 2.2rem;
         font-size: 1.8rem;
         padding: 5px 25px 5px 25px;
