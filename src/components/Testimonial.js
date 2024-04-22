@@ -13,6 +13,7 @@ export default function Testimonial({numStars, custPhoto, custName, testimonialT
                     size={28}
                     color="#EDEFEE"
                     activeColor="#F4CE14"
+                    edit={false}
                 />
             </div>
 

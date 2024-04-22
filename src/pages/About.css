@@ -1,7 +1,165 @@
-.about-screen{
+.about-screen {
     flex-grow: 1;
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-rows: 80px auto;
     width: 100%;
     min-height: 100%;
     background-color: #EDEFEE;
     padding: 20px;
+    font-family: "Markazi Text", serif;
+}
+
+.about-page-title {
+    grid-row: 1;
+    display: flex;
+    align-items: center;
+    padding: 20px;
+}
+
+.about-page-title h1 {
+
+    font-weight: 700;
+    color: #333333;
+}
+
+.about-body {
+    grid-row: 2;
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-rows: auto;
+    column-gap: 20px;
+    row-gap: 20px;
+    width: 100%;
+    padding: 20px;
+}
+
+.about-image-one img,
+.about-image-two img {
+    width: 100%;
+    height: auto;
+}
+
+@media only screen and (max-width: 699px) {
+
+    .about-image-one {
+        grid-row: 1;
+        grid-column: 1 / span 6;
+    }
+
+    .about-image-two {
+        grid-row: 1;
+        grid-column: 7 / span 6;
+    }
+
+    .about-text-one {
+        grid-row: 2;
+        grid-column: 1 / span 12;
+    }
+
+    .about-text-two {
+        grid-row: 3;
+        grid-column: 1 / span 12;
+    }
+
+}
+
+
+@media only screen and (max-width: 499px) {
+
+    .about-page-title,
+    .about-body {
+        grid-column: 1 / span 12;
+    }
+
+    .about-page-title h1 {
+        font-size: 2.6rem;
+    }
+
+    .about-text-one,
+    .about-text-two {
+        font-size: 1rem;
+    }
+}
+
+@media only screen and (min-width: 500px) {
+
+    .about-page-title,
+    .about-body {
+        grid-column: 1 / span 12;
+    }
+
+    .about-page-title h1 {
+        font-size: 2.8rem;
+    }
+
+    .about-text-one,
+    .about-text-two {
+        font-size: 1rem;
+    }
+
+}
+
+@media only screen and (min-width: 700px) {
+
+    .about-page-title,
+    .about-body {
+        grid-column: 2 / span 10;
+    }
+
+    .about-page-title h1 {
+        font-size: 3rem;
+    }
+
+    .about-text-one {
+        grid-row: 1;
+        grid-column: 1 / span 7;
+    }
+
+    .about-image-one {
+        grid-row: 1;
+        grid-column: 8 / span 5;
+    }
+
+    .about-image-two {
+        grid-row: 2;
+        grid-column: 1 / span 5;
+    }
+
+    .about-text-two {
+        grid-row: 2;
+        grid-column: 6 / span 7;
+    }
+
+}
+
+@media only screen and (min-width: 1100px) {
+
+    .about-page-title h1 {
+        font-size: 3.2rem;
+    }
+
+    .about-text-one,
+    .about-text-two {
+        font-size: 1.2rem;
+    }
+}
+
+@media only screen and (min-width: 1200px) {
+
+    .about-body {
+        grid-column: 3 / span 8;
+    }
+
+}
+
+@media only screen and (min-width: 1440px) {
+
+    .about-page-title {
+        grid-column: 3 / span 8;
+    }
+
+    .about-body {
+        grid-column: 4 / span 6;
+    }
 }

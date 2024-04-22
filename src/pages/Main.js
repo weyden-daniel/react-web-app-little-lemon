@@ -6,6 +6,8 @@ import About from './About';
 import Menu from './Menu';
 import BookingForm from './BookingForm';
 import ConfirmedBooking from "./ConfirmedBooking";
+import OrderOnline from "./OrderOnline";
+import Login from "./Login";
 
 import { fetchAPI, submitAPI } from '../utils/fakeAPI';
 
@@ -70,6 +72,16 @@ export default function Main () {
                 <Route
                     path="/confirmed-booking"
                     element={<ConfirmedBooking/>}
+                ></Route>
+
+                <Route
+                    path="/order-online"
+                    element={<OrderOnline/>}
+                ></Route>
+
+                <Route
+                    path="/login"
+                    element={<Login/>}
                 ></Route>
 
             </Routes>
