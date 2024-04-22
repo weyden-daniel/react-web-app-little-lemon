@@ -48,12 +48,20 @@ export default function Home() {
                 </div>
             </div>
 
-            <div className="home-screen-specials">
+            <div
+                className="home-screen-specials"
+                aria-label="Special selection from the complete menu"
+            >
 
                 <div className="home-grid-row">
                     <div className="specials-header">
                         <h1>This weeks specials!</h1>
-                        <Link to="/menu">Online Menu</Link>
+                        <Link 
+                            to="/menu"
+                            aria-label="Link to menu page"
+                        >
+                            Online Menu
+                        </Link>
                     </div>
                 </div>
 
@@ -61,7 +69,10 @@ export default function Home() {
 
                     <div className="menu">
 
-                        <div className="menu-item one">
+                        <div
+                            className="menu-item one"
+                            aria-label="Card with photo, price and description of a dish"
+                        >
                             <Dish
                                 image = {dish_grilled_fish}
                                 dishName="Grilled Fish"
@@ -70,7 +81,10 @@ export default function Home() {
                             />
                         </div>
 
-                        <div className="menu-item two">
+                        <div
+                            className="menu-item two"
+                            aria-label="Card with photo, price and description of a dish"
+                        >
                             <Dish
                                 image = {dish_greek_salad}
                                 dishName="Greek Salad"
@@ -79,7 +93,10 @@ export default function Home() {
                             />
                         </div>
 
-                        <div className="menu-item three">
+                        <div
+                            className="menu-item three"
+                            aria-label="Card with photo, price and description of a dish"
+                        >
                             <Dish
                                 image = {dish_lemon_dessert}
                                 dishName="Lemon Dessert"
@@ -94,7 +111,10 @@ export default function Home() {
 
             </div>
 
-            <div className="home-screen-testimonials">
+            <div
+                className="home-screen-testimonials"
+                aria-label="Selection of testimonials from the customers of the restaurant"
+            >
 
                 <div className="home-grid-row">
                     <div className="testimonials-header">
@@ -112,6 +132,7 @@ export default function Home() {
                                 custPhoto={cust_photo_1}
                                 custName={"Jasmine Thompson"}
                                 testimonialText={"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer convallis purus at sem malesuada, sed ultricies sapien convallis."}
+                                aria-label="Card with the rating, photo, name and testimonial from a customer"
                             />
                         </div>
 
@@ -121,6 +142,7 @@ export default function Home() {
                                 custPhoto={cust_photo_2}
                                 custName={"David Anderson"}
                                 testimonialText={"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer convallis purus at sem malesuada."}
+                                aria-label="Card with the rating, photo, name and testimonial from a customer"
                             />
                         </div>
 
@@ -130,6 +152,7 @@ export default function Home() {
                                 custPhoto={cust_photo_3}
                                 custName={"Alejandro Ramirez"}
                                 testimonialText={"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam eget turpis nec dolor consectetur bibendum."}
+                                aria-label="Card with the rating, photo, name and testimonial from a customer"
                             />
                         </div>
 
@@ -139,6 +162,7 @@ export default function Home() {
                                 custPhoto={cust_photo_4}
                                 custName={"Sarah Johnson"}
                                 testimonialText={"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam eget turpis nec dolor consectetur bibendum. Fusce nec dapibus ipsum."}
+                                aria-label="Card with the rating, photo, name and testimonial from a customer"
                             />
                         </div>
 

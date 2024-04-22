@@ -10,6 +10,10 @@
     font-family: "Markazi Text", serif;
 }
 
+.about-screen article {
+    display: contents;
+}
+
 .about-page-title {
     grid-row: 1;
     display: flex;

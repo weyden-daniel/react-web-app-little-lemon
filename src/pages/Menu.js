@@ -19,7 +19,10 @@ export default function Menu() {
 
             <div className="grid-row">
 
-                <div className="menu">
+                <div
+                    className="menu"
+                    aria-label="List of dishes with photos, prices and descriptions"
+                >
 
                     <div className="menu-item one">
                         <Dish
